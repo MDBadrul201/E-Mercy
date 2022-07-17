@@ -1,0 +1,300 @@
+<?php
+	session_start();
+	include("connect.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Doctor Details</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CSS/bootstrap.css">
+<style>
+
+* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-image: url('img/baker.jpg');
+}
+
+/* Header/logo Title */
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #3ac2fc;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. 
+It is positioned relative until a given offset position is met in the viewport - then it 
+"sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 
+and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #0da1e0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  align: center;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content b {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+}
+.dropdown-content b:hover {
+  color: #FFFFFF;
+  background-color: #00A4BD;
+}
+
+.dropdownsec {
+  display: inline-block;
+  position: relative;
+  align: center;
+}
+.dropdownsec-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+.dropdownsec:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content p {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+}
+.dropdown-content p:hover {
+  color: #FFFFFF;
+  background-color: #00A4BD;
+}
+
+/* Change the link color on hover */
+		li a:hover 
+		{
+			background-color: #cc3838 ;
+
+		}
+		div.gallery 
+		{
+    		margin: 5px;
+			border: 1px solid #ccc;
+			float: left;
+			width:300px;
+		}
+
+		div.gallery:hover 
+		{
+				border: 1px solid #777;
+		}
+
+		div.gallery img 
+		{
+    		width: 100%;
+			height: auto;
+		}
+
+		div.desc 
+		{
+    		padding: 15px;
+			text-align: center;
+		}
+				
+/* Responsive layout - when the screen is less than 700px wide, 
+make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, 
+make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+	  <a href="Hospital_list_private.html">About</a>
+	  <a href="listdoc.php">Doctors</a>
+	  <a href="contactus.html">Contact</a>
+	  <a href="FAQ_private.html" >FAQ</a>
+	  <a href="listpat.php" >Patient</a>
+	  <a href="treatment.php" >Treatment</a>
+	  
+	</div>
+
+	<div class="header">
+	   <p align ="left"><b>Avenue Hospital</b></p>
+	   <h1>ADMIN E-MERCY</h1>
+	</div>
+
+	<div class="navbar">
+	  <a href="loginpg.html" class="right" >Logout</a>
+	</div>
+
+
+
+<br>
+<div class="dropdown">
+  <button>All specialties:</button>
+  <div class="dropdown-content">
+  <b href="Respiratory.php">Respiratory</b>
+  <b href="Cardiology.php">Cardiology</b>
+  <b href="General_Surgery.php">General Surgery</b>
+  <b href="Hematology">Hematology</b>
+  </div>
+</div>
+
+
+<div class="dropdownsec">
+  <button>Search or Select a doctor</button>
+  <div class="dropdownsec-content">
+  <p href="Respiratory.php">Dr. Adam Bin Sariman </p>
+  <p href="Cardiology.php">Dr. Aina Nadia Binti Kamarul</p>
+  <p href="General_Surgery.php">Dr. Wan Nur Fathin Amirah</p>
+  <p href="Hematology">Dr. Abd Razak Muhamad</p>
+  </div>
+</div>
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<div class="main">
+	<div class="gallery">
+        <a target="_blank" href="doc1.jpg">
+            <img src="doc1.jpg"  width="150" height="100">
+        </a>
+        <div class="desc">Datuk Saifullah Baharudin<br>Obstetrics and Gynaecology (O&G)<br>Gynaecological Oncology<br>Avenue Hospital Kuala Lumpur</div>
+        
+	</div>
+	
+	
+	<div class="gallery">
+        <a target="_blank" href="doc2.jpg">
+            <img src="doc2.jpg"  width="150" height="60">
+        </a>
+        <div class="desc">Dr Izzati Hamirah Binti Abdul<br>Orthopaedic & Trauma Surgery<br>Paediatric Orthopaedics<br>Avenue Hospital Skudai Johor</div>
+	</div>
+        
+	<div class="gallery">
+        <a target="_blank" href="doc3.jpeg">
+            <img src="doc3.jpeg"  width="150" height="100">
+        </a>
+        <div class="desc">Datuk Saiful Kamarul Bin Azhar<br>Respiratory Medicine<br>Internal Medicine<br>Avenue Hospital Miri Serawak</div>
+        
+	</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="footer">
+	<p>This website was created by 4 individuals</p>
+	<p>Sitie Noor Amirra Balqqis Binti Ahmad Tajmunizam</p>
+	<p>Nur Aisyah Binti Mohd Asri</p>
+	<p>Hilman Hakimi Bin Nor Affandi</p>	
+	<p>Mohd Badrul Amin Bin Safary</p>
+	<a href="forgotpass.html" >Forgot Password?</a>
+</div>
+</body>
+</html>

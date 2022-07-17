@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hospital List</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Style the body */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	background-image: url('image/baker.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+  
+}
+/* Header/logo Title */
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #3ac2fc;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. 
+It is positioned relative until a given offset position is met in the viewport - then it 
+"sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 
+and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #0da1e0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+div.gallery 
+		{
+			margin: 5px;
+			border: 1px solid #ccc;
+			float: left;
+			width:300px;
+		}
+
+		div.gallery:hover 
+		{
+			border: 1px solid #777;
+		}
+
+		div.gallery img 
+		{
+			width: 100%;
+			height: auto;
+		}
+
+		div.desc 
+		{
+			padding: 15px;
+			text-align: center;
+		}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, 
+make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, 
+make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+  <a href="Hospital_list.html">About</a>
+  <a href="docdetailspub.html">Doctors</a>
+  <a href="contactuspub.html">Contact</a>
+  <a href="FAQ_public.html" >FAQ</a>
+</div>
+
+<div class="header">
+   <p align ="left"><b>Hospital List</b></p>
+   <h1>E-MERCY</h1>
+</div>
+
+<div class="navbar">
+  <a href="login.php" class="right">Login</a>
+</div>
+
+
+<div class="main">
+	<div class="gallery">
+        <a target="_blank" href="hospital 1.jpeg">
+            <img src="image/hospital_1.jpeg"  width="250" height="200">
+        </a>
+        <div class="desc">Avenue Hospital Kuala Lumpur</div>
+        
+	</div>
+	
+	
+	<div class="gallery">
+        <a target="_blank" href="hospital 2.jpeg">
+            <img src="image/hospital_2.jpeg"  width="250" height="200">
+        </a>
+        <div class="desc">Avenue Hospital Miri Sarawak</div>
+	</div>
+        
+	<div class="gallery">
+        <a target="_blank" href="hospital 3.jpeg">
+            <img src="image/hospital_3.jpeg"  width="250" height="200">
+        </a>
+        <div class="desc">Avenue Hospital Skudai Johor</div>
+        
+	</div>
+</div>	
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
+<div class="footer">
+	<p>This website was created by 4 individuals</p>
+	<p>Sitie Noor Amirra Balqqis Binti Ahmad Tajmunizam</p>
+	<p>Nur Aisyah Binti Mohd Asri</p>
+	<p>Hilman Hakimi Bin Nor Affandi</p>	
+	<p>Mohd Badrul Amin Bin Safary</p>
+	<a href="forgotpass.html" >Forgot Password?</a>
+</div>
+
+</body>
+</html>
